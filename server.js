@@ -4,10 +4,10 @@ const port = process.argv[2] || 3000;
 const hostname = process.argv[3] || "localhost";
 const path = require("path");
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/")));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "public", "index.html"));
+    res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
 app.listen(port, () => {
